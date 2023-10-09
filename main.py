@@ -1,20 +1,6 @@
 import openpyxl
 import pandas as pd
 df = pd.read_excel('D:\lab1\lab_pi_101.xlsx')
-# print(len(df['Оценка']))
-# print(len(df[df['Группа']=='ПИ101']))
-
-# df.loc[df['Группа']=='ПИ101', ''
-# print(df['Оценка'].notna().sum()) - ПЕРВОЕ
-# print(df.loc[df['Группа']=='ПИ101'& df['Оценка'].notna()])
-# print(((df['Группа']=='ПИ101') & (df['Оценка'].notna())).sum()) - ВТОРОЕ
-# print(((df['Группа']=='ПИ101') & (df['Оценка'].notna()) & df['Личный номер студента'].value_counts()).sum())
-# df.loc[df['Личный номер студента'].value_counts(), df['Группа']=='ПИ101'& df['Оценка'].notna()]
-# print(df.loc[(df['Группа']=='ПИ101') & (df['Оценка'].notna()), df['Личный номер студента'].value_counts()])
-# print(len(df[(df['Группа']=='ПИ101') & (df['Оценка'].notna())].drop_duplicates(subset=['Личный номер студента']))) - ТРЕТЬЕ
-# print(((df[(df['Группа']=='ПИ101') & (df['Оценка'].notna())].drop_duplicates(subset=['Личный номер студента']))['Личный номер студента']).tolist()) - ЧЕТВЕРТОЕ
-# print(((df[(df['Группа']=='ПИ101') & (df['Оценка'].notna())].drop_duplicates(subset=['Уровень контроля']))['Уровень контроля']).tolist()) - ПЯТОЕ
-# print(((df[(df['Группа']=='ПИ101') & (df['Оценка'].notna())].drop_duplicates(subset=['Год']))['Год']).tolist()) - ШЕСТОЕ
 kol_grades = df['Оценка'].notna().sum()
 kol_grades_pi101 = ((df['Группа']=='ПИ101') & (df['Оценка'].notna())).sum()
 kol_stud = len(df[(df['Группа']=='ПИ101') & (df['Оценка'].notna())].drop_duplicates(subset=['Личный номер студента']))
