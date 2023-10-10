@@ -1,6 +1,6 @@
-import openpyxl
+
 import pandas as pd
-df = pd.read_excel('D:\lab1\lab_pi_101.xlsx')
+df = pd.read_excel('lab_pi_101.xlsx')
 kol_grades = df['Оценка'].notna().sum()
 kol_grades_pi101 = ((df['Группа']=='ПИ101') & (df['Оценка'].notna())).sum()
 kol_stud = len(df[(df['Группа']=='ПИ101') & (df['Оценка'].notna())].drop_duplicates(subset=['Личный номер студента']))
